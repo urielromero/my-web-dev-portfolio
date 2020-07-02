@@ -1,0 +1,239 @@
+
+/********************************GLOBAL STYLES****************/
+
+
+/*Allos you to add padding to elements and automatically adjust box size to fit when using FLOAT.
+n0 need to update width and height each time padding is chnaged*/
+html{
+    box-sizing: border-box;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+body{
+    color: #343434;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+/*
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
+*/
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+img{
+    width: 300px;
+}
+
+a {
+    color: yellow;
+}
+
+a:hover{
+    color: darkorange;
+}
+
+h1{
+    font-size: 50px;
+}
+
+h2{
+margin: 0;
+    font-size: 32px;
+}
+
+h1, h2{
+    font-family: 'Montserrat', sans-serif;
+    margin: 15px;
+    
+}
+
+.content-wrap{
+/*    when view port is smaller then 800px, it switches to width % leaving a space around it.*/
+    max-width: 800px;
+    width: 85%;
+/*    center text */
+    margin: 0 auto;
+    padding: 50px 0;
+/*    ^ help eliminate default margin on h1, h2, p  (white spance b/w blocks)*/
+}
+
+h3{
+    margin-bottom: 0;
+}
+
+/*selects all ps' immediatelly after h3 only.*/
+.item-details h3 + p{
+    font-style: italic;
+}
+
+/*selectes ALL ps' following h3*/
+.item-details h3 ~ p{
+margin: 0;
+}
+
+/*only SECTION childs within .divider will be selected. Here divider wraps all sections so its easier to select them this way*/
+.divider > section{
+        
+    border-bottom: 1px dashed darkgray;
+    padding: 25px 0; /* 25 top and bottom 0 left and right*/
+}
+
+/* we target the last section within .divider*/
+.divider > section:last-of-type {
+    border-bottom: none;
+}
+
+/********************************PROFILE**********************/
+header{
+    background-color: rgb(52,171,235);
+    color: aliceblue;
+}
+
+
+/********************************PROJECTS*********************/
+.projects{
+    background-color: aliceblue;
+}
+
+
+.projects a {
+    color: darkblue;
+}
+
+
+.projects .btn {
+    color: aliceblue;
+    background-color: darkblue;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+    display: inline-block;
+/*    ^ helps remove btn overlap with padding*/
+}
+
+.projects .btn:hover{
+/*    rgba adds opacity option at the end*/
+    background: rgba(47, 48, 979, 80%);
+}
+
+.project-item{
+    overflow: hidden;  /*you can also use display: inline-block;  allows elements underneath appear leaft and right or eachother w/o overlap.*/
+   
+}
+
+
+.project-item h3{
+    margin-top: 0;
+}
+
+/********************************WORK EXPERIENCE**************/
+.work-experience{
+    background-color: lightblue;
+}
+
+/********************************EDUCATION********************/
+
+.education{
+    background-image: url(../images/joanna-kosinska-unsplash.jpg);
+/*    cover - makes sure entire block is always filled based on its proportion, picture adjusts*/
+    background-size: cover;
+/*    makes sure picture always stays top and right position, even on smaller viewports*/
+    background-position: top right;
+   
+}
+
+.education p {
+    width: 60%;
+}
+
+
+/********************************CONTACT INFO*****************/
+footer{
+    background-color: darkgray;
+    color: aliceblue;
+}
+
+.contact-list{
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-list a{
+    padding: 10px;
+    display: inline-block;  /*Since a's are inline, inline block allows padding to be added all around as a block element*/
+}
+
+
+
+/********************************RESPONSIVE*****************/
+/*media type and media feature*/
+/*will apply to viewport 750px and larger*/
+@media screen and ( min-width:750px) {
+    
+    .project-item img{
+    float: left;  /*float //:primarily used to float pictures around text not to create columbs with divs*/
+    margin-right: 20px;
+    }
+    
+    .job-item{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+    }
+    
+    header, footer{
+        text-align: center;
+    }
+    
+    .contact-list {
+    display: flex;
+    justify-content: center;
+    }
+    
+}
+
+
+/*activates when viewport is smaller then 749px*/
+@media screen and (max-width:749px){
+    
+    h1{
+        font-size: 45px;
+        line-height: 0.9;
+        margin-bottom: 25px;
+    }
+    
+    h2{
+        line-height: 1;
+    }
+    
+    /*    this padding was reduced only for smaller screens*/
+    .contact-list a {
+        padding: 5px;
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
